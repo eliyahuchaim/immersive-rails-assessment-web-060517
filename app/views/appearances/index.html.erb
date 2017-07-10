@@ -1,0 +1,5 @@
+<h1>All Appearances</h1>
+<%= @appearances.each do |a| %>
+<p><%= Guest.find(a.guest_id) %></p>
+<p><%= Episode.find(a.episode_id) %></p>
+<% end %>
