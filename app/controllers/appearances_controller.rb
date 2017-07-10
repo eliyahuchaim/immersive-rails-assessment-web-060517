@@ -14,8 +14,7 @@ class AppearancesController < ApplicationController
   def create
     @guest = Guest.find_by_name(params[:appearance][:guest_id])
     @episode = Episode.find(params[:appearance][:episode_id])
-    byebug
-    Appearance.create(:guest_id @guest.id, :episode_id @episode.id)
+    Appearance.create(guest_id: @guest.id, episode_id: @episode.id)
     redirect_to :show
   end
 
